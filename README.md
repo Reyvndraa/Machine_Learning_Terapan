@@ -36,8 +36,6 @@ Dengan memanfaatkan data seperti usia, tekanan darah, kadar glukosa, BMI, dan ga
 - Menghasilkan sistem prediksi yang dapat diterapkan dalam praktik layanan kesehatan.
   Model yang dibangun diharapkan tidak hanya akurat, tetapi juga dapat diintegrasikan ke dalam sistem informasi rumah sakit atau aplikasi kesehatan untuk membantu pengambilan keputusan medis secara real-time.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
 ### Solution statements
 
 - Menerapkan dan membandingkan beberapa algoritma machine learning, seperti Logistic Regression, Support Vector Machine dan Artificial Intelligence
@@ -126,7 +124,7 @@ Kelebihan:
 - Robust terhadap overfitting terutama pada dataset dengan fitur banyak dan jumlah data terbatas.
 
 Kekurangan:
--Lambat pada dataset besar (scalability buruk).
+- Lambat pada dataset besar (scalability buruk).
 - Pemilihan kernel dan tuning parameter seperti C dan gamma cukup rumit.
 - Sulit diinterpretasi, tidak cocok untuk aplikasi yang memerlukan transparansi model.
 
@@ -164,18 +162,23 @@ Kekurangan:
 
 ### Confussion Matrix
 **Logistic Regression**
+
 ![Confussion Matrix](img/d4.png)
 
 **Support Vector Machine**
+
 ![Confussion Matrix](img/d5.png)
 
 **Artificial Neural Network**
+
 ![Confussion Matrix](img/d6.png)
 
 
 ### ROC Comparison
+
 ![ROC Comparison](img/d7.png)
 
+- Kurva ROC yang menampilkan trade-off antara true positive rate dan false positive rate, memberikan perspektif lebih lanjut terkait kemampuan deteksi positif dari setiap model. Visualisasi ini membantu mengidentifikasi model yang paling seimbang antara akurasi umum dan sensitivitas terhadap kelas minoritas.
 
 ### Feature Importance 
 Gambar ini menampilkan fitur apa yang paling penting untuk model ini menggunakan **Logistic Regression**
@@ -184,10 +187,8 @@ Gambar ini menampilkan fitur apa yang paling penting untuk model ini menggunakan
 
 - Berdasarkan hasil pada gambar, fitur yang paling berpengaruh terhadap kemungkinan stroke adalah usia (age) dengan koefisien paling besar positif, menandakan bahwa semakin tua seseorang, semakin tinggi risikonya
 
+## Kesimpulan 
+- Logistic regreession = Model ini menunjukkan performa yang paling seimbang. Dengan akurasi sebesar 77.98% dan skor ROC AUC sebesar 0.78, model ini mampu mendeteksi kelas minoritas (label 1) dengan recall yang cukup tinggi (0.70).
+- Support Vector Machine (SVM) = SVM menghasilkan akurasi sebesar 74.07% namun menunjukkan performa yang buruk dalam mengenali kelas minoritas. Dengan recall hanya 0.18 untuk label 1 dan ROC AUC 0.45, model ini memiliki kecenderungan kuat untuk bias terhadap kelas mayoritas
+- Artificial Neural Network = Model ANN menunjukkan performa yang sangat rendah dengan akurasi hanya sebesar 11.45%. Meskipun recall untuk kelas minoritas terlihat tinggi (0.98), hal ini disebabkan oleh model yang cenderung memprediksi sebagian besar data sebagai kelas positif, seperti terlihat dari confusion matrix-nya.
 
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
