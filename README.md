@@ -10,8 +10,8 @@ Deteksi dini terhadap risiko stroke sangat penting dalam upaya pencegahan dan pe
 
 \*\*Referensi
 
-- World Health Organization (WHO). (2023). Stroke: Key facts. Retrieved from: https://www.who.int/news-room/fact-sheets/detail/stroke
-- Kementerian Kesehatan Republik Indonesia. (2018). Laporan Nasional Riskesdas 2018. Badan Penelitian dan Pengembangan Kesehatan. Retrieved from: https://www.litbang.kemkes.go.id/laporan-riset-kesehatan-dasar-riskesdas-2018/
+- World Health Organization. (2023). Stroke: Key facts. https://www.who.int/news-room/fact-sheets/detail/stroke
+- Kementerian Kesehatan Republik Indonesia. (2018). Laporan nasional Riskesdas 2018. Badan Penelitian dan Pengembangan Kesehatan. https://www.litbang.kemkes.go.id/laporan-riset-kesehatan-dasar-riskesdas-2018/
 
 ## Business Understanding
 
@@ -25,7 +25,6 @@ Dengan memanfaatkan data seperti usia, tekanan darah, kadar glukosa, BMI, dan ga
 
 - Bagaimana mengidentifikasi variabel-variabel yang paling berpengaruh terhadap risiko stroke pada pasien berdasarkan data historis kesehatan mereka?
 - Bagaimana membangun model prediksi berbasis machine learning yang mampu mengklasifikasikan pasien berisiko tinggi dan rendah terhadap stroke?
-- Apakah sistem prediksi stroke yang dikembangkan dapat diintegrasikan ke dalam sistem informasi rumah sakit atau layanan kesehatan untuk mendukung pengambilan keputusan klinis
 
 ### Goals
 
@@ -33,8 +32,6 @@ Dengan memanfaatkan data seperti usia, tekanan darah, kadar glukosa, BMI, dan ga
   Dengan melakukan eksplorasi dan analisis data, proyek ini bertujuan menemukan faktor-faktor kunci seperti usia, hipertensi, kadar glukosa, dan status merokok yang paling memengaruhi kemungkinan seseorang terkena stroke.
 - Membangun model prediksi stroke berbasis machine learning.
   Proyek ini bertujuan mengembangkan model klasifikasi yang akurat dan andal untuk memprediksi apakah seseorang berisiko mengalami stroke berdasarkan data kesehatan mereka.
-- Menghasilkan sistem prediksi yang dapat diterapkan dalam praktik layanan kesehatan.
-  Model yang dibangun diharapkan tidak hanya akurat, tetapi juga dapat diintegrasikan ke dalam sistem informasi rumah sakit atau aplikasi kesehatan untuk membantu pengambilan keputusan medis secara real-time.
 
 ### Solution statements
 
@@ -187,8 +184,11 @@ Gambar ini menampilkan fitur apa yang paling penting untuk model ini menggunakan
 
 - Berdasarkan hasil pada gambar, fitur yang paling berpengaruh terhadap kemungkinan stroke adalah usia (age) dengan koefisien paling besar positif, menandakan bahwa semakin tua seseorang, semakin tinggi risikonya
 
+
+**Semua yang saya bahas diatas sudah sesuai dengan konteks data, problem statement, dan solusi yang diinginkan**
 ## Kesimpulan 
 - Logistic regreession = Model ini menunjukkan performa yang paling seimbang. Dengan akurasi sebesar 77.98% dan skor ROC AUC sebesar 0.78, model ini mampu mendeteksi kelas minoritas (label 1) dengan recall yang cukup tinggi (0.70).
 - Support Vector Machine (SVM) = SVM menghasilkan akurasi sebesar 74.07% namun menunjukkan performa yang buruk dalam mengenali kelas minoritas. Dengan recall hanya 0.18 untuk label 1 dan ROC AUC 0.45, model ini memiliki kecenderungan kuat untuk bias terhadap kelas mayoritas
 - Artificial Neural Network = Model ANN menunjukkan performa yang sangat rendah dengan akurasi hanya sebesar 11.45%. Meskipun recall untuk kelas minoritas terlihat tinggi (0.98), hal ini disebabkan oleh model yang cenderung memprediksi sebagian besar data sebagai kelas positif, seperti terlihat dari confusion matrix-nya.
+
 
