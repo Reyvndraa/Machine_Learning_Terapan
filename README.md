@@ -113,6 +113,7 @@ Kelebihan:
 - Cepat dilatih: Komputasinya ringan, cocok untuk dataset kecil-menengah.
 - Bekerja baik jika hubungan antar fitur dan target bersifat linier.
 - Output probabilistik: Menghasilkan probabilitas prediksi, berguna untuk klasifikasi berbasis ambang batas (thresholding).
+
 Kekurangan:
 - Tidak cocok untuk hubungan non-linier (kecuali dimodifikasi dengan polynomial features).
 - Sensitif terhadap outlier dan multikolinearitas.
@@ -123,6 +124,7 @@ Kelebihan:
 - Akurasi tinggi terutama pada data yang kompleks dan berdimensi tinggi.
 - Efektif pada data non-linier dengan penggunaan kernel (misalnya RBF, polynomial).
 - Robust terhadap overfitting terutama pada dataset dengan fitur banyak dan jumlah data terbatas.
+
 Kekurangan:
 -Lambat pada dataset besar (scalability buruk).
 - Pemilihan kernel dan tuning parameter seperti C dan gamma cukup rumit.
@@ -133,6 +135,7 @@ Kelebihan:
 - Sangat fleksibel dan mampu menangkap hubungan non-linier yang kompleks.
 - Mampu belajar dari data besar dengan banyak fitur.
 - Bisa menghasilkan prediksi yang sangat akurat jika dilatih dengan benar.
+  
 Kekurangan:
 - Butuh waktu dan sumber daya komputasi besar.
 - Tuning hyperparameter (jumlah neuron, layer, learning rate, dll.) bisa rumit.
@@ -157,6 +160,21 @@ Kekurangan:
 | **ANN**                 | 0     | 0.1145   | 0.99      | 0.07   | 0.13     |
 |                         | 1     |          | 0.05      | 0.98   | 0.10     |
 
+
+
+### Confussion Matrix
+**Logistic Regression**
+![Confussion Matrix](img/d4.png)
+
+**Support Vector Machine**
+![Confussion Matrix](img/d5.png)
+
+**Artificial Neural Network**
+![Confussion Matrix](img/d6.png)
+
+
+### ROC Comparison
+![ROC Comparison](img/d7.png)
 
 
 ### Feature Importance 
