@@ -74,10 +74,13 @@ Dataset yang digunakan berjudul “Healthcare Dataset Stroke Data”, terdiri da
 | stroke            | 0 atau 1 (ya atau tidak)                                                  |
 
 ### Exploratory Data Analysis
-Gambar barchart tersebut menunjukkan distribusi target 'Stroke'
+Gambar barchart dibawah menunjukkan distribusi target 'Stroke'
 
 ![Distribusi Target Stroke](img/d1.png)
 
+### Correlation Heatmap
+
+![Correlation Heatmap](img/d2.png)
 **Rubrik/Kriteria Tambahan (Opsional)**:
 
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
