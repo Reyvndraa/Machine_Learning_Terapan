@@ -160,10 +160,12 @@ Kekurangan:
 
 
 ### Feature Importance 
+Gambar ini menampilkan fitur apa yang paling penting untuk model ini menggunakan **Logistic Regression**
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
+![Feature Importance](img/d3.png)
 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+- Berdasarkan hasil pada gambar, fitur yang paling berpengaruh terhadap kemungkinan stroke adalah usia (age) dengan koefisien paling besar positif, menandakan bahwa semakin tua seseorang, semakin tinggi risikonya
+
 
 **---Ini adalah bagian akhir laporan---**
 
