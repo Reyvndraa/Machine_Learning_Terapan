@@ -102,6 +102,19 @@ Menampilkan korelasi antar fitur numerik dengan target 'Stroke'
 ## Modeling
 Pada tahap Modeling, digunakan tiga algoritma: Logistic Regression, SVM, dan ANN, dengan data yang telah diseimbangkan menggunakan SMOTE untuk mengatasi ketimpangan kelas antara kasus stroke dan non-stroke.
 
+
+### Tahapan dan Parameter Pemodelan
+- Import library dan model dari sklearn, termasuk Logistic Regression, SVM, ANN, dan metrik evaluasi seperti accuracy, ROC AUC, classification report, dan confusion matrix.
+- Definisikan model dalam dictionary models dengan parameter:
+    - Logistic Regression pakai max_iter=1000 supaya training convergen.
+    - SVM pakai probability=True supaya bisa output probabilitas.
+    - ANN pakai hidden_layer_sizes=(32,16), max_iter=1000, dan random_state=42 untuk konfigurasi jaringan dan kestabilan training.
+- Lakukan training model menggunakan data yang sudah di-balance dengan SMOTE (X_train_smote dan y_train_smote).
+- Prediksi kelas dan probabilitas pada data uji (X_test) menggunakan model yang sudah dilatih.
+- Hitung metrik evaluasi yaitu accuracy, ROC AUC (kalau tersedia), classification report (precision, recall, f1-score), dan confusion matrix.
+- Simpan hasil evaluasi tiap model ke dalam dictionary results untuk memudahkan perbandingan performa.
+- Cetak hasil metrik evaluasi agar mudah melihat performa masing-masing model.
+  
 ### Logistic Regression
 Kelebihan:
 - Sederhana dan mudah diinterpretasi: Cocok untuk memahami hubungan antar variabel.
