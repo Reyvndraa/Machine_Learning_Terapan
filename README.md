@@ -79,41 +79,74 @@ Gambar barchart dibawah menunjukkan distribusi target 'Stroke'
 ![Distribusi Target Stroke](img/d1.png)
 
 ### Correlation Heatmap
+Menampilkan korelasi antar fitur numerik dengan target 'Stroke'
 
 ![Correlation Heatmap](img/d2.png)
-**Rubrik/Kriteria Tambahan (Opsional)**:
 
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+- Usia ('age') menunjukkan korelasi positif tertinggi dengan stroke (0.25) dibandingkan fitur lain, menunjukkan bahwa semakin tua usia seseorang, semakin tinggi kemungkinan untuk mengalami stroke.
 
 ## Data Preparation
 
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+### Data Cleaning
+- Menghapus kategori 'other' pada kolom 'gender', karena hanya ada 2 gender saja di dunia ini, yaitu laki-laki dan perempuan
+- Mengisi missing value pada kolom 'bmi' menggunakan median
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
+### Data Preprocessing
+- Mengubah fitur kategorikal menjadi fitur numerikal menggunakan LabelEncoder
+- Melakukan feature scaling pada fitur numerikal dengan metode standarisasi (z-score)
+- 
+### Data Splitting
+- Melakukan pemisahan data fitur (X) dan label (y)
+- Membagi data latih dan data uji menjadi 8:2 
 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+### Data Balancing 
+- Menerapkan SMOTE untuk mem-balance data yang ada, karena data sebelumnya sangat imbalance sehingga model nantinya akan cenderung memprediksi kelas mayoritas
+- SMOTE hanya untuk data training
+
 
 ## Modeling
+Pada tahap Modeling, digunakan tiga algoritma: Logistic Regression, SVM, dan ANN, dengan data yang telah diseimbangkan menggunakan SMOTE untuk mengatasi ketimpangan kelas antara kasus stroke dan non-stroke.
 
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+### Logistic Regression
+Kelebihan:
+- Sederhana dan mudah diinterpretasi: Cocok untuk memahami hubungan antar variabel.
+- Cepat dilatih: Komputasinya ringan, cocok untuk dataset kecil-menengah.
+- Bekerja baik jika hubungan antar fitur dan target bersifat linier.
+- Output probabilistik: Menghasilkan probabilitas prediksi, berguna untuk klasifikasi berbasis ambang batas (thresholding).
+Kekurangan:
+- Tidak cocok untuk hubungan non-linier (kecuali dimodifikasi dengan polynomial features).
+- Sensitif terhadap outlier dan multikolinearitas.
+- Kurang akurat dibanding model kompleks jika data sangat kompleks.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
+### Support Vector Machine 
+Kelebihan:
+- Akurasi tinggi terutama pada data yang kompleks dan berdimensi tinggi.
+- Efektif pada data non-linier dengan penggunaan kernel (misalnya RBF, polynomial).
+- Robust terhadap overfitting terutama pada dataset dengan fitur banyak dan jumlah data terbatas.
+Kekurangan:
+-Lambat pada dataset besar (scalability buruk).
+- Pemilihan kernel dan tuning parameter seperti C dan gamma cukup rumit.
+- Sulit diinterpretasi, tidak cocok untuk aplikasi yang memerlukan transparansi model.
 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+### Artificial Neural Network
+Kelebihan:
+- Sangat fleksibel dan mampu menangkap hubungan non-linier yang kompleks.
+- Mampu belajar dari data besar dengan banyak fitur.
+- Bisa menghasilkan prediksi yang sangat akurat jika dilatih dengan benar.
+Kekurangan:
+- Butuh waktu dan sumber daya komputasi besar.
+- Tuning hyperparameter (jumlah neuron, layer, learning rate, dll.) bisa rumit.
+- Kurang interpretatif (dikenal sebagai "black-box model").
+
 
 ## Evaluation
+| **Metrik**    | **Deskripsi**                                                                                                                                                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Accuracy**  | Rasio prediksi yang benar dari seluruh prediksi. Pada kasus ini, Logistic Regression memberikan akurasi tertinggi (77.98%), artinya model ini paling banyak menghasilkan prediksi yang benar secara keseluruhan.         |
+| **Precision** | Dari seluruh prediksi stroke, berapa yang benar-benar stroke. SVM dan ANN punya precision rendah untuk kelas stroke, menandakan banyak false positive. Logistic Regression sedikit lebih baik, tapi tetap belum optimal. |
+| **Recall**    | Dari seluruh kasus stroke asli, berapa banyak yang berhasil dideteksi. Logistic Regression punya **recall tinggi (70%)**, artinya cukup bagus dalam mendeteksi kasus stroke walau dengan risiko false positive.          |
+| **F1-Score**  | Rata-rata harmonis antara precision dan recall. Karena model Logistic Regression punya balance antara keduanya, F1-nya (24%) jadi yang paling mending dibanding dua model lain.                                          |
 
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
-
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 
