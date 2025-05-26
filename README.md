@@ -74,7 +74,8 @@ Dataset yang digunakan berjudul “Healthcare Dataset Stroke Data”, terdiri da
 | stroke            | 0 atau 1 (ya atau tidak)                                                  |
 
 ### Exploratory Data Analysis
-Gambar dibawah ini menunjukkan distribusi target 'Stroke'
+Gambar barchart tersebut menunjukkan distribusi target 'Stroke'
+
 ![Distribusi Target Stroke](img/d1.png)
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
