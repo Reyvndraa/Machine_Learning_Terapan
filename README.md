@@ -25,7 +25,7 @@ Dengan memanfaatkan data seperti usia, tekanan darah, kadar glukosa, BMI, dan ga
 
 - Bagaimana mengidentifikasi variabel-variabel yang paling berpengaruh terhadap risiko stroke pada pasien berdasarkan data historis kesehatan mereka?
 - Bagaimana membangun model prediksi berbasis machine learning yang mampu mengklasifikasikan pasien berisiko tinggi dan rendah terhadap stroke?
-- Apakah sistem prediksi stroke yang dikembangkan dapat diintegrasikan ke dalam sistem informasi rumah sakit atau layanan kesehatan untuk mendukung pengambilan keputusan klinis?
+- Apakah sistem prediksi stroke yang dikembangkan dapat diintegrasikan ke dalam sistem informasi rumah sakit atau layanan kesehatan untuk mendukung pengambilan keputusan klinis
 
 ### Goals
 
@@ -94,7 +94,7 @@ Menampilkan korelasi antar fitur numerik dengan target 'Stroke'
 ### Data Preprocessing
 - Mengubah fitur kategorikal menjadi fitur numerikal menggunakan LabelEncoder
 - Melakukan feature scaling pada fitur numerikal dengan metode standarisasi (z-score)
-- 
+  
 ### Data Splitting
 - Melakukan pemisahan data fitur (X) dan label (y)
 - Membagi data latih dan data uji menjadi 8:2 
@@ -147,6 +147,19 @@ Kekurangan:
 | **Recall**    | Dari seluruh kasus stroke asli, berapa banyak yang berhasil dideteksi. Logistic Regression punya **recall tinggi (70%)**, artinya cukup bagus dalam mendeteksi kasus stroke walau dengan risiko false positive.          |
 | **F1-Score**  | Rata-rata harmonis antara precision dan recall. Karena model Logistic Regression punya balance antara keduanya, F1-nya (24%) jadi yang paling mending dibanding dua model lain.                                          |
 
+### Hasil evaluasi model 
+| Model                   | Kelas | Accuracy | Precision | Recall | F1-Score |
+| ----------------------- | ----- | -------- | --------- | ------ | -------- |
+| **Logistic Regression** | 0     | 0.7798   | 0.98      | 0.78   | 0.87     |
+|                         | 1     |          | 0.14      | 0.70   | 0.24     |
+| **SVM**                 | 0     | 0.7407   | 0.95      | 0.77   | 0.85     |
+|                         | 1     |          | 0.04      | 0.18   | 0.06     |
+| **ANN**                 | 0     | 0.1145   | 0.99      | 0.07   | 0.13     |
+|                         | 1     |          | 0.05      | 0.98   | 0.10     |
+
+
+
+### Feature Importance 
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 
