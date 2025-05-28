@@ -74,7 +74,9 @@ Dataset yang digunakan berjudul “Healthcare Dataset Stroke Data”, terdiri da
 
 #### Duplicated Data
 
-![Duplicated Data](img/d2.png)
+![Duplicated Data](img/d8.png)
+
+- Dari gambar diatas dapat disimpulkan bahwa tidak ada data duplikat dalam dataset yang sedang dianalisis. Hasil dari df.duplicated().sum() menunjukkan angka 0, yang artinya tidak ada satupun baris yang sama atau duplikat di seluruh dataset. Selain itu, saat dicek lebih lanjut dengan df[df.duplicated()], hasilnya juga kosong yang artinya dataframe duplicate_rows_df tidak menemukan baris apapun yang duplikat dari dataset.
 ### Fitur
 
 | **Fitur**         | **Keterangan**                                                            |
@@ -107,8 +109,8 @@ Menampilkan korelasi antar fitur numerik dengan target 'Stroke'
 ## Data Preparation
 
 ### Data Cleaning
-- Menghapus kategori 'other' pada kolom 'gender', karena hanya ada 2 gender saja di dunia ini, yaitu laki-laki dan perempuan
 - Mengisi missing value pada kolom 'bmi' menggunakan median
+- Menghapus kategori 'other' pada kolom 'gender', karena hanya ada 2 gender saja di dunia ini, yaitu laki-laki dan perempuan
 
 ### Data Preprocessing
 - Mengubah fitur kategorikal menjadi fitur numerikal menggunakan LabelEncoder
@@ -138,7 +140,13 @@ Pada tahap Modeling, digunakan tiga algoritma: Logistic Regression, SVM, dan ANN
 - Hitung metrik evaluasi yaitu accuracy, ROC AUC (kalau tersedia), classification report (precision, recall, f1-score), dan confusion matrix.
 - Simpan hasil evaluasi tiap model ke dalam dictionary results untuk memudahkan perbandingan performa.
 - Cetak hasil metrik evaluasi agar mudah melihat performa masing-masing model.
-  
+
+
+### Cara Kerja Model
+- **Logistic Regression** = Logistic Regression merupakan salah satu metode klasifikasi yang berbasis pada model regresi linear, namun hasil akhirnya ditransformasikan menggunakan fungsi sigmoid. **Fungsi sigmoid** ini mengubah output linear menjadi nilai probabilitas antara 0 dan 1, yang kemudian digunakan untuk menentukan kelas dari data (biasanya dengan threshold 0.5). Secara konsep, algoritma ini menggunakan **transformasi log-odds**, yang merepresentasikan hubungan antara kombinasi fitur dengan kemungkinan terjadinya suatu peristiwa.
+- **Support Vector Machine** = SVM itu fokus buat nyari **hyperplane** terbaik yang bisa misahin dua kelas data dengan margin seluas mungkin. Artinya, model ini mencari batas pemisah yang paling jauh dari titik-titik data terdekat dari masing-masing kelas, yang disebut sebagai **support vectors**. Kalau data nggak bisa dipisahin secara linear, SVM bisa pakai **kernel trick** buat merubah data ke dimensi yang lebih tinggi, biar bisa dipisahin dengan **hyperplane**.
+- **Artificial Neural Network** = ANN atau jaringan saraf tiruan. Dalam kasus ini, saya menggunakan **Multilayer Perceptron (MLP)** dengan **dua hidden layer: satu dengan 32 neuron dan satu lagi dengan 16 neuron**. Data masuk dari input layer, lalu diproses di setiap neuron pada hidden layers, lewat operasi linear + aktivasi non-linear. Hasil akhirnya keluar di output layer sebagai probabilitas klasifikasi. ANN belajar lewat **backpropagation**, yaitu proses update bobot berdasarkan seberapa besar error yang dihasilkan, supaya model makin akurat melakukan prediksi di iterasi berikutnya.
+
 ### Logistic Regression
 Kelebihan:
 - Sederhana dan mudah diinterpretasi: Cocok untuk memahami hubungan antar variabel.
