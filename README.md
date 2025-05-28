@@ -51,6 +51,30 @@ Dataset yang digunakan berjudul “Healthcare Dataset Stroke Data”, terdiri da
 | Format       | CSV                                                                                                         |
 | Sumber       | [Kaggle - Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) |
 
+
+### About Dataset
+#### Missing Value
+| Kolom               | Jumlah Missing Values |
+| ------------------- | --------------------- |
+| id                  | 0                     |
+| gender              | 0                     |
+| age                 | 0                     |
+| hypertension        | 0                     |
+| heart\_disease      | 0                     |
+| ever\_married       | 0                     |
+| work\_type          | 0                     |
+| Residence\_type     | 0                     |
+| avg\_glucose\_level | 0                     |
+| **bmi**             | **201**               |
+| smoking\_status     | 0                     |
+| stroke              | 0                     |
+
+- Dari hasil pengecekan missing values, sebagian besar kolom dalam dataset ini udah bersih alias nggak ada nilai yang hilang. Kolom-kolom seperti id, gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type, avg_glucose_level, smoking_status, dan stroke semuanya lengkap tanpa missing data. Tapi ada satu kolom yaitu kolom bmi, yang punya 201 missing values.
+
+
+#### Duplicated Data
+
+![Duplicated Data](img/d2.png)
 ### Fitur
 
 | **Fitur**         | **Keterangan**                                                            |
