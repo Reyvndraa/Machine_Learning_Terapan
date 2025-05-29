@@ -52,6 +52,27 @@ Dataset yang digunakan berjudul “Healthcare Dataset Stroke Data”, terdiri da
 | Sumber       | [Kaggle - Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) |
 
 
+
+### Fitur
+
+| **Fitur**           | **Keterangan**                                                     |
+| ------------------- | ------------------------------------------------------------------ |
+| `id`                | ID pasien (unik untuk tiap orang)                                  |
+| `gender`            | `Male`, `Female`, `Other`                                          |
+| `age`               | Rentang usia dari angka (contoh: 67.0, 61.0, 80.0, dll.)           |
+| `hypertension`      | `0` (tidak), `1` (ya)                                              |
+| `heart_disease`     | `0` (tidak), `1` (ya)                                              |
+| `ever_married`      | `Yes`, `No`                                                        |
+| `work_type`         | `Private`, `Self-employed`, `Govt_job`, `children`, `Never_worked` |
+| `Residence_type`    | `Urban`, `Rural`                                                   |
+| `avg_glucose_level` | Nilai numerik (contoh: 228.69, 105.92, dll.)                       |
+| `bmi`               | Nilai numerik (contoh: 36.6, 32.5, 24.0, dll.)                     |
+| `smoking_status`    | `formerly smoked`, `never smoked`, `smokes`, `Unknown`             |
+| `stroke`            | `0` (tidak kena stroke), `1` (kena stroke)                         |
+
+
+
+
 ### About Dataset
 #### Missing Value
 | Kolom               | Jumlah Missing Values |
@@ -77,22 +98,7 @@ Dataset yang digunakan berjudul “Healthcare Dataset Stroke Data”, terdiri da
 ![Duplicated Data](img/d8.png)
 
 - Dari gambar diatas dapat disimpulkan bahwa tidak ada data duplikat dalam dataset yang sedang dianalisis. Hasil dari df.duplicated().sum() menunjukkan angka 0, yang artinya tidak ada satupun baris yang sama atau duplikat di seluruh dataset. Selain itu, saat dicek lebih lanjut dengan df[df.duplicated()], hasilnya juga kosong yang artinya dataframe duplicate_rows_df tidak menemukan baris apapun yang duplikat dari dataset.
-### Fitur
 
-| **Fitur**         | **Keterangan**                                                            |
-| ----------------- | ------------------------------------------------------------------------- |
-| id                | Unique identifier buat semua orang                                        |
-| gender            | 0 atau 1 (male or female)                                                 |
-| age               | Umur                                                                      |
-| hypertension      | 0 atau 1 (pernah atau tidak)                                              |
-| heart_disease     | 0 atau 1 (pernah atau tidak)                                              |
-| ever_married      | 0 atau 1 (pernah atau tidak)                                              |
-| work_type         | Tipe pekerjaan (Private, self-employed, govt-job, children, never worked) |
-| Residence_type    | Urban atau Rural                                                          |
-| avg_glucose_level | Kadar glukosa                                                             |
-| bmi               | Berat Badan                                                               |
-| smoking_status    | Kategori perokok (formerly smoked, never smoked, smokes, unknown)         |
-| stroke            | 0 atau 1 (ya atau tidak)                                                  |
 
 ### Exploratory Data Analysis
 Gambar barchart dibawah menunjukkan distribusi target 'Stroke'
