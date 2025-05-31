@@ -46,7 +46,7 @@ Dataset yang digunakan berjudul “Healthcare Dataset Stroke Data”, terdiri da
 | Keterangan   | Detail                                                                                                      |
 | ------------ | ----------------------------------------------------------------------------------------------------------- |
 | Jumlah Data  | 5.110 baris                                                                                                 |
-| Jumlah Fitur | 11 kolom                                                                                                    |
+| Jumlah Fitur | 12 kolom                                                                                                    |
 | Target       | `Stroke` (Yes / No)                                                                                         |
 | Format       | CSV                                                                                                         |
 | Sumber       | [Kaggle - Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) |
